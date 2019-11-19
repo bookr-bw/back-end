@@ -22,7 +22,7 @@ function findById(id) {
 }
 
 function del(id) {
-	return db(books)
-		.where(findById(id))
-		.delete(id)
+	return db('books')
+		.where("id", id)
+		.delete();
 } 
