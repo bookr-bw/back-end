@@ -4,9 +4,8 @@ module.exports = {
 	find,
 	findBy,
 	findById,
-	del
-};
-
+	remove
+}
 function find() {
 	return db('books')
 }
@@ -21,8 +20,9 @@ function findById(id) {
 		.first();
 }
 
-function del(id) {
+function remove(id) {
 	return db('books')
 		.where("id", id)
-		.delete();
-} 
+		.del();
+}
+
