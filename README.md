@@ -1,7 +1,7 @@
 # Back-End For Bookr Application
 
 
-Bookr is your source for all things book review!  Bookr allows you to utilize the power of your peers to help you narrow down  new books for you to read based on suggestions and ratings from those in this social platform. Allow users an easy and engaging way to browse new books that invites them to participate with the site and makes finding a new book an enjoyable process!
+Bookr is your source for all things book review!  Bookr allows you to utilize the power of your peers to help you narrow down  new books for you to read based on suggestions and ratings from those in this social platform. Allow users an easy and engaging way to browse new books and invites them to participate with the site and makes finding a new book an enjoyable process!
 
 # BaseURL 
 ## https://bookr-bw-app.herokuapp.com/
