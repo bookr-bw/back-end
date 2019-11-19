@@ -22,16 +22,16 @@ router.post("/register", (req, res) => {
 	const validateResult = validateUser(user);
 
 	if (validateResult.isSuccessful === true) {
-		const hash = bcrypt.hashSync(user.password, 14); // 2 ^ n
+		const hash = bcrypt.hashSync(user.password, 14);
 		user.password = hash;
 
 		Users.add(user)
 			.then(saved => {
 				const token = getJwtToken(user);
 
-				// 3: send the token to the client
+				// Send the token back to the client
 				res.status(201).json({
-					message: `Welcome ${user.username}! have a token...`,
+					user: `${user.username}`,
 					token
 				})
 			})
@@ -53,12 +53,12 @@ router.post("/login", (req, res) => {
 		.first()
 		.then(user => {
 			if (user && bcrypt.compareSync(password, user.password)) {
-				// 2: produce a token
+				// Produce the token
 				const token = getJwtToken(user);
 
-				// 3: send the token to the client
+				// Send the token to the client
 				res.status(200).json({
-					message: `Welcome ${user.username}! have a token...`,
+					user: `${user.username}`,
 					token
 				});
 			} else {
@@ -72,9 +72,8 @@ router.post("/login", (req, res) => {
 
 function getJwtToken(user) {
 	const payload = {
-		username: user.username,
-		department: user.department
-		//this will probably come from the database
+		username: user.username
+		//this will come from the database
 	};
 
 	const secret = process.env.JWT_SECRET || "This could be alphanumerically beautifully inside a torn horse 3 by 5 equals 38765!";
