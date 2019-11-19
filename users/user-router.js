@@ -36,7 +36,7 @@ router.post("/register", (req, res) => {
 				})
 			})
 			.catch(error => {
-				res.status(500).json(error);
+				res.status(500).json('An error has occured in storing the user: ' + error);
 			});
 	} else {
 		res.status(400).json({
