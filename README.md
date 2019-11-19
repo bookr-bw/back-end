@@ -16,7 +16,10 @@ Bookr is your source for all things book review!  Bookr allows you to utilize th
 |GET	|/api/users/	|Once User has a token is able to retrieve a list of all users|
 * JSON Web Tokens Are Used to Verify Users to all protected routes to access further resources for Bookr
 
-**All endpoints below require an Authentication Token held within Local Storage**
+
+###All endpoints below require an Authentication Token held within Local Storage**
+
+
 ## Book Reviews
 |Request Type	|Endpoint	|Description|
 |:---------:|:-----------:|:--------------:|
@@ -49,10 +52,10 @@ This endpoint allows user to get all book reviews related to a book by that book
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QgVXNlcjkiLCJ1c2VyX2lkIjo1LCJpYXQiOjE1NzQxODU2MTksImV4cCI6MTU3NDI3MjAxOX0.svhPHRwLVlGlWPPhqN63FTh1prqfy2W7NnqG1v444ts"
 }
 ```
-**There is validation on the back End where user name must be at least 2 characters and password must be at least 4 characters long when registering.
+**There is validation on the back End where user name must be at least 2 characters long and password must be at least 4 characters long when registering.
 ------------------------------------------------
 ### Adding a Book Review
-#### A POST request to the /api/books endpoint expects to receive an object as follows: (EVERY FIELD IS REQUIRED)??
+#### A POST request to the /api/books endpoint expects to receive an object as follows. There is a check in the Back End to confirm the user has filled out the data fields needed.
 ```javascript
 {
     "rating": "integer value"   //this value is an integer value based on # of stars user leaves in review
@@ -60,18 +63,25 @@ This endpoint allows user to get all book reviews related to a book by that book
 }
 ```
 ### Looking Up One Book Review
-#### A GET request to the /api/books/:id endpoint where id is the book id returns an object as follows.
+#### A GET request to the /api/reviews/:id endpoint where id is the book id returns an object as follows if there are more than one book review for that book id and just one will be an array with one object.
 ```javascript
-{
-    "rating": "integer value"   //this value is an integer value based on # of stars user leaves in review
-    "review": "This is a body of text user leaves in reviewing the book!"
-}
+[
+  {
+    "id": 1,
+    "rating": 1,
+    "review": "Worst book ever",
+    "books_id": 1,
+    "user_id": 1
+  },
+  {
+    "id": 4,
+    "rating": 4,
+    "review": "Not bad",
+    "books_id": 1,
+    "user_id": 2
+  }
+]
 ```
-
-
-|Field	 |  Type	 |	    Unique   |
-|:------:|:----------:|:--------------:|
-|username |	String	|  true	|
 
 ### Get All Books
 #### A GET request to the api/books endpoint returns an an array of objects as follows:
@@ -107,7 +117,8 @@ This endpoint allows user to get all book reviews related to a book by that book
     "description": "React for beginners",
     "author": "Author Thomas"
   }
-]```
+]
+```
 
 ### GET One Book
 #### A GET request to the api/books/:id endpoint where id is the id of the individual book returns object as follows:
