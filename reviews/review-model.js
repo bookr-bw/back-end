@@ -34,7 +34,6 @@ function find() {
 }
 
 function findBy(filter) {
-    console.log(filter);
   return db("reviews").where(filter);
 }
 

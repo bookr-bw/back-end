@@ -72,8 +72,8 @@ router.post("/login", (req, res) => {
 
 function getJwtToken(user) {
 	const payload = {
-		username: user.username
-		//this will come from the database
+		username: user.username,
+		user_id: user.id
 	};
 
 	const secret = process.env.JWT_SECRET || "This could be alphanumerically beautifully inside a torn horse 3 by 5 equals 38765!";
