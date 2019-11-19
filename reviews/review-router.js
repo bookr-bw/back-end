@@ -4,7 +4,7 @@ const express = require('express');
 const Review = require("./review-model")
 const reviewRouter = express.Router();
 
-
+const user = require('../users/users-model');
 
 reviewRouter.get('/:id', (req, res) => {
     const { id } = req.params;
@@ -23,7 +23,18 @@ reviewRouter.get('/:id', (req, res) => {
   });
 
   reviewRouter.post('/:id', (req, res) => {
+    const { id } = req.params;
+
     const reviewData = req.body;
+
+    reviewData.books_id = id;
+
+
+    user.findBy({'username': req.decodedJwt.username})
+    .first()
+    .then(currentUser => {
+reviewData.user_id = currentUser.id;
+    });
   
     Review.add(reviewData)
     .then(review => {

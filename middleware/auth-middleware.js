@@ -4,15 +4,15 @@ const jwt = require('jsonwebtoken');
 const Users = require('../users/users-model.js');
 
 module.exports = (req, res, next) => {
-	const token = req.headers.authorization;
+	const token = req.headers.authorization.replace('Bearer ', '');
 
 	if (token) {
 		const secret = process.env.JWT_secret || 'This could be alphanumerically beautifully inside a torn horse 3 by 5 equals 38765!';
-
+		
 		jwt.verify(token, secret, (err, decodedToken) => {
 			if (err) {
 				//this confirms that the value has been altered
-				res.status(401).json({ message: 'Credentials invalid!' })
+				res.status(401).json({ message: 'Credentials invalid!' + err })
 			} else {
 				req.decodedJwt = decodedToken;
 				next();

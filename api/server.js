@@ -14,6 +14,6 @@ server.use(express.json());
 
 server.use('/api/users', userRouter);
 
-server.use('/api/reviews', reviewRouter);
+server.use('/api/reviews', authenticate, reviewRouter);
 
 module.exports = server;
