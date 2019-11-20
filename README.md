@@ -13,7 +13,9 @@ Bookr is your source for all things book review!  Bookr allows you to utilize th
 |:---------:|:-----------:|:---------------:|
 |POST	|/api/users/register|	Creates New User and Gives Token|
 |POST	|/api/users/login	|Logins previously registered user and Gives Token|
-|GET	|/api/users/	|Once User has a token is able to retrieve a list of all users|
+|GET	|/api/users/	|Once User has a token they are able to retrieve a list of all users|
+|GET	|/api/users/:id	|Once User has a token they are able to retrieve a user their specific id in the database|
+
 * JSON Web Tokens Are Used to Verify Users to all protected routes to access further resources for Bookr
 
 
@@ -53,6 +55,32 @@ This endpoint allows user to get all book reviews related to a book by that book
 }
 ```
 **There is validation on the back End where user name must be at least 2 characters long and password must be at least 4 characters long when registering.
+
+
+#### A GET request to the api/users/:id endpoint returns an object as follows:
+```javascript
+{
+  "id": 1,
+  "username": "Test1"
+}
+```
+### A GET request to api/users for a list of all users returns an array of objects as follows:
+```javascript
+[
+  {
+    "id": 1,
+    "username": "Test1"
+  },
+  {
+    "id": 2,
+    "username": "Test2",
+  },
+  {
+    "id": 3,
+    "username": "Test3",
+  }
+
+]
 ------------------------------------------------
 ### Adding a Book Review
 #### A POST request to the /api/books endpoint expects to receive an object as follows. There is a check in the Back End to confirm the user has filled out the data fields needed.
@@ -89,33 +117,38 @@ This endpoint allows user to get all book reviews related to a book by that book
 [
   {
     "id": 1,
-    "title": "Best Book Ever",
-    "description": "This is the best book ever",
-    "author": "Author Jeff"
+    "title": "Salt, Fat, Acid, Heat: Mastering the Elements of Good Cooking",
+    "description": "Just reading Salt, Fat, Acid, Heat will make you a better cook, adept at seasoning, balancing, understanding what it really is you’re doing and why... Make room on the bedside table—and the countertop.",
+    "author": "Samin Nosrat",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/515vfwlf2vL._SX396_BO1,204,203,200_.jpg"
   },
   {
     "id": 2,
-    "title": "Programming 101",
-    "description": "Learn how to program",
-    "author": "Author Richard"
+    "title": "Wrecking Ball (Diary of a Wimpy Kid Book 14) ",
+    "description": "An unexpected inheritance gives Greg Heffley’s family a chance to make big changes to their house. But they soon find that home improvement isn’t all it’s cracked up to be.",
+    "author": "Jeff Kinney",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/51S-kDF-fXL._SX340_BO1,204,203,200_.jpg"
   },
   {
     "id": 3,
-    "title": "Learning Node",
-    "description": "Node for Noobs",
-    "author": "Author Nicole"
+    "title": "Where the Crawdads Sing",
+    "description": " The story is set in the 1950s and revolves around a young woman named Kya Clark, who is from extremely rural North Carolina. Known by others as the Marsh Girl, she lives alone in nature—but the draw of other people, and specifically love, brings her into contact with the greater world. This novel has a mystery at its core, but it can be read on a variety of levels. ",
+    "author": "Delia Owens",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/51j5p18mJNL._SX330_BO1,204,203,200_.jpg"
   },
   {
     "id": 4,
-    "title": "Redux",
-    "description": "Making Redux not suck",
-    "author": "Author Ryan"
+    "title": "The Guardians: A Novel",
+    "description": "Terrific…affecting…Grisham has done it again.  Such creative longevity is not that unusual in the suspense genre, but what is rare is Grisham’s feat of keeping up the pace of producing, on average, a novel a year without a notable diminishment of ingenuity or literary quality.",
+    "author": "John Grisham",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/51U2hIUQgqL._SY346_.jpg"
   },
   {
     "id": 5,
-    "title": "React React React",
-    "description": "React for beginners",
-    "author": "Author Thomas"
+    "title": "Guinness World Records 2020",
+    "description": "In a series of 11 fact-packed chapters, we introduce you to the record-holders who’ve pushed the boundaries of what’s possible",
+    "author": "Guinness World Records",
+    "image_url": "https://images-na.ssl-images-amazon.com/images/I/511w4HUthdL._SX374_BO1,204,203,200_.jpg"
   }
 ]
 ```
@@ -125,9 +158,10 @@ This endpoint allows user to get all book reviews related to a book by that book
 ```javascript
 {
   "id": 4,
-  "title": "Redux",
-  "description": "Making Redux not suck",
-  "author": "Author Ryan"
+  "title": "The Guardians: A Novel",
+  "description": "Terrific…affecting…Grisham has done it again.  Such creative longevity is not that unusual in the suspense genre, but what is rare is Grisham's feat of keeping up the pace of producing, on average, a novel a year without a notable diminishment of ingenuity or literary quality.",
+  "author": "John Grisham",
+  "image_url": "https://images-na.ssl-images-amazon.com/images/I/51U2hIUQgqL._SY346_.jpg"
 }
 ```
 ### DELETE One Book

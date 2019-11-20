@@ -9,11 +9,13 @@ const authenticate = require('../middleware/auth-middleware.js');
 //will use api/users/ and this endpoint will allow user to get a list of all users 
 router.get("/", authenticate, (req, res) => {
 	Users.all()
-		.then(users => {
-			res.status(200).json(users);
+		.then(user => {
+			res.status(200).json(user)
 		})
 		.catch(err => res.status(500).json(err));
 });
+
+
 
 router.get("/:id", authenticate, (req, res) => {
 	let { id } = req.params;
