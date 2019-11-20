@@ -130,5 +130,17 @@ This endpoint allows user to get all book reviews related to a book by that book
   "author": "Author Ryan"
 }
 ```
-
+### DELETE One Book
+#### A DELETE request to the api/books/:id endpoint where id is the id of the individual book returns an object as follows for a successful deletion:
+```javascript
+{
+  "Deleted": 1
+}
+```
+#### If there is no book with that id a message returned will be thus: 
+```javascript
+{
+  "message": " No book with that id"
+}
+```
 
