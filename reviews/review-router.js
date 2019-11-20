@@ -3,61 +3,61 @@ const express = require('express');
 
 const Review = require("./review-model")
 const reviewRouter = express.Router();
-const { validateReview } = require ('./review-helpers')
+const { validateReview } = require('./review-helpers')
 const user = require('../users/users-model');
 
 
 reviewRouter.get('/:id', (req, res) => {
-    const { id } = req.params;
-  
-    Review.findBy({'books_id': id})
-    .then(rev => {
-      if (rev) {
-        res.json(rev);
-      } else {
-        res.status(404).json({ message: 'Could not find review.' })
-      }
-    })
-    .catch(err => {
-      res.status(500).json({ message: 'Failed to get review: ' + err });
-    });
-  });
+	const { id } = req.params;
 
-  reviewRouter.post('/:id', (req, res) => {
-    const { id } = req.params;
+	Review.findBy({ 'books_id': id })
+		.then(rev => {
+			if (rev) {
+				res.json(rev);
+			} else {
+				res.status(404).json({ message: 'Could not find review.' })
+			}
+		})
+		.catch(err => {
+			res.status(500).json({ message: 'Failed to get review: ' + err });
+		});
+});
 
-    const reviewData = req.body;
+reviewRouter.post('/:id', (req, res) => {
+	const { id } = req.params;
 
-    const isValid = validateReview(reviewData);
+	const reviewData = req.body;
 
-    if (isValid.isSuccessful) {
+	const isValid = validateReview(reviewData);
 
-    reviewData.books_id = id;
+	if (isValid.isSuccessful) {
 
-    user.findBy({'username': req.decodedJwt.username})
-    .first()
-    .then(currentUser => {
-reviewData.user_id = currentUser.id;
+		reviewData.books_id = id;
 
-    });
- 
-    Review.add(reviewData)
-    .then(review => {
-      res.status(201).json(review);
-    })
-    .catch (err => {
-      res.status(500).json({ message: 'Failed to create new review' });
-    });
-  }
+		user.findBy({ 'username': req.decodedJwt.username })
+			.first()
+			.then(currentUser => {
+				reviewData.user_id = currentUser.id;
 
-  else {
-    res.status(500).json({
-      message: [
-        isValid.errors
-      ]
-    })
-  }
-  });
+			});
+
+		Review.add(reviewData)
+			.then(review => {
+				res.status(201).json(review);
+			})
+			.catch(err => {
+				res.status(500).json({ message: 'Failed to create new review' });
+			});
+	}
+
+	else {
+		res.status(500).json({
+			message: [
+				isValid.errors
+			]
+		})
+	}
+});
 
 
 //   {
@@ -69,4 +69,4 @@ reviewData.user_id = currentUser.id;
 // }
 
 
-  module.exports = reviewRouter;
+module.exports = reviewRouter;
