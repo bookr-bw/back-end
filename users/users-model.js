@@ -5,7 +5,12 @@ module.exports = {
 	find,
 	findBy,
 	findById,
+	all,
 };
+
+function all() {
+	return db('users')
+}
 
 function find() {
 	return db('users').select('id', 'username');
