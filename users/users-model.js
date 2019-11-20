@@ -10,6 +10,7 @@ module.exports = {
 
 function all() {
 	return db('users')
+		.select('id', 'username')
 }
 
 function find() {
