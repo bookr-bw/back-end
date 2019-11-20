@@ -57,14 +57,14 @@ This endpoint allows user to get all book reviews related to a book by that book
 **There is validation on the back End where user name must be at least 2 characters long and password must be at least 4 characters long when registering.
 
 
-#### A GET request to the api/users/:id endpoint returns an object as follows
+#### A GET request to the api/users/:id endpoint returns an object as follows:
 ```javascript
 {
   "id": 1,
   "username": "Test1"
 }
 ```
-### A GET request to api/users for a list of all users returns an array of objects as follows
+### A GET request to api/users for a list of all users returns an array of objects as follows:
 ```javascript
 [
   {
