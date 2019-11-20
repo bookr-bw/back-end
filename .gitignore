@@ -80,4 +80,5 @@ typings/
 .dynamodb/
 
 # Test Database
-test.db3
+./data/test.db3
+./data/bookr.sqlite3 
