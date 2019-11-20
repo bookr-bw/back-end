@@ -21,7 +21,6 @@ module.exports = {
 		},
 		migrations: {
 			directory: './data/migrations',
-			tableName: 'migrations',
 		},
 		seeds: { directory: './data/seeds' },
 	},
