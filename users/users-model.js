@@ -22,7 +22,7 @@ function findBy(filter) {
 }
 
 async function add(user) {
-	const [id] = await db('users').returning('id').insert(user);
+	const [id] = await db('users').returning('id').insert(user, 'id');
 
 	return findById(id);
 }
