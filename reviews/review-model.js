@@ -12,7 +12,7 @@ module.exports = {
 };
 
 async function add(review) {
-  const [id] = await db("reviews").insert(review, 'id');
+  const [id] = await db("reviews").returning('id').insert(review, 'id');
 
   return findById(id);
 }
