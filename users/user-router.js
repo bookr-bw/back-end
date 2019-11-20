@@ -15,6 +15,19 @@ router.get("/", authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err));
 });
 
+router.get("/:id", authenticate, (req, res) => {
+	let { id } = req.params;
+	Users.findById(id)
+		.then(user => {
+			if (user) {
+				res.status(200).json(user);
+			}
+		})
+		.catch(err => res.status(500).json(err));
+});
+
+
+
 // for endpoints beginning with /api/auth
 router.post("/register", (req, res) => {
 	let user = req.body;
