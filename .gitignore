@@ -79,4 +79,6 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# Test Database
+./data/test.db3
 ./data/bookr.sqlite3 
