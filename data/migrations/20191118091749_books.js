@@ -3,13 +3,13 @@ exports.up = function (knex) {
 	return knex.schema.createTable('books', books => {
 		books.increments('id');
 		books
-			.string('title', 255)
+			.text('title')
 			.notNullable();
 		books
-			.string('description', 255)
+			.text('description')
 			.nullable();
 		books
-			.string('author', 255)
+			.text('author')
 			.nullable();
 
 	});
