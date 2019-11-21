@@ -4,7 +4,8 @@ module.exports = {
 	find,
 	findBy,
 	findById,
-	remove
+	remove,
+	add
 }
 function find() {
 	return db('books')
@@ -27,4 +28,10 @@ function remove(id) {
 			.del();
 	});
 }
+
+async function add(book) {
+	const [ id ] = await db("books").returning('id').insert(book, 'id');
+  
+	return findById(id);
+  }
 
