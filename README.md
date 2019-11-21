@@ -26,8 +26,8 @@ Bookr is your source for all things book review!  Bookr allows you to utilize th
 |Request Type	|Endpoint	|Description|
 |:---------:|:-----------:|:--------------:|
 This endpoint allows user to get all book reviews related to a book by that book id and to post a review to a book already within the database.
-|GET	|/api/books/:id	|Returns all Book Reviews based on passed in Book ID|
-|POST|/api/books/:id		|Creates A New Book Review using Book ID|
+|GET	|/api/reviews/:id	|Returns all Book Reviews based on passed in Book ID|
+|POST|/api/reviews/:id		|Creates A New Book  Review using Book ID|
 
 ## Books
 |Request Type	|Endpoint	|Description|
@@ -81,9 +81,11 @@ This endpoint allows user to get all book reviews related to a book by that book
   }
 
 ]
+```
 ------------------------------------------------
+
 ### Adding a Book Review
-#### A POST request to the /api/books endpoint expects to receive an object as follows. There is a check in the Back End to confirm the user has filled out the data fields needed.
+#### A POST request to the /api/reviews endpoint expects to receive an object as follows. There is a check in the Back End to confirm the user has filled out the data fields needed.
 ```javascript
 {
     "rating": "integer value"   //this value is an integer value based on # of stars user leaves in review
