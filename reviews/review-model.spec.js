@@ -29,12 +29,6 @@ describe("review model", function () {
 
     it("should insert a review", async function () {
 
-      const book = await bookModel.add({
-        title: "Olive, Again",
-        description: "In thirteen poignant...",
-        author: "Elizabeth Strout",
-        image_url: "https://images-na.ssl-images-amazon.com/images/I/51fu2JUE-1L._SX327_BO1,204,203,200.jpg",
-      });
 
       const review = await reviewModel.add({
         rating: 1,
@@ -50,18 +44,13 @@ describe("review model", function () {
   describe("delete()", function () {
     it("should insert delete a review", async function () {
 
-      const book = await bookModel.add({
-        title: "Olive, Again",
-        description: "In thirteen poignant...",
-        author: "Elizabeth Strout",
-        image_url: "https://images-na.ssl-images-amazon.com/images/I/51fu2JUE-1L._SX327_BO1,204,203,200.jpg",
-      });
+
 
       const review = await reviewModel.add({
         rating: 1,
         review: "Worst book ever",
         user_id: 1,
-        books_id: book.id,
+        books_id: 1,
       }).then(review => {
         reviewModel.remove(review.id).then(removed => {
           db("reviews").then(reviews => {
