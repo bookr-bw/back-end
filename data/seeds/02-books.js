@@ -1,7 +1,9 @@
 
 exports.seed = function (knex, Promise) {
 	return knex('books').insert([
-		{ title: "Salt, Fat, Acid, Heat: Mastering the Elements of Good Cooking", description: "Just reading Salt, Fat, Acid, Heat will make you a better cook, adept at seasoning, balancing, understanding what it really is you’re doing and why... Make room on the bedside table—and the countertop.", author: "Samin Nosrat", image_url: "https://images-na.ssl-images-amazon.com/images/I/515vfwlf2vL._SX396_BO1,204,203,200_.jpg" },
+		{
+			title: "Salt, Fat, Acid, Heat: Mastering the Elements of Good Cooking", description: "Just reading Salt, Fat, Acid, Heat will make you a better cook, adept at seasoning, balancing, understanding what it really is you’re doing and why... Make room on the bedside table—and the countertop.", author: "Samin Nosrat", image_url: "https://images-na.ssl-images-amazon.com/images/I/515vfwlf2vL._SX396_BO1,204,203,200_.jpg"
+		},
 		{ title: "Wrecking Ball (Diary of a Wimpy Kid Book 14) ", description: "An unexpected inheritance gives Greg Heffley’s family a chance to make big changes to their house. But they soon find that home improvement isn’t all it’s cracked up to be.", author: "Jeff Kinney", image_url: "https://images-na.ssl-images-amazon.com/images/I/51S-kDF-fXL._SX340_BO1,204,203,200_.jpg" },
 		{ title: "Where the Crawdads Sing", description: " The story is set in the 1950s and revolves around a young woman named Kya Clark, who is from extremely rural North Carolina. Known by others as the Marsh Girl, she lives alone in nature—but the draw of other people, and specifically love, brings her into contact with the greater world. This novel has a mystery at its core, but it can be read on a variety of levels. ", author: "Delia Owens", image_url: "https://images-na.ssl-images-amazon.com/images/I/51j5p18mJNL._SX330_BO1,204,203,200_.jpg" },
 		{ title: "The Guardians: A Novel", description: "Terrific…affecting…Grisham has done it again.  Such creative longevity is not that unusual in the suspense genre, but what is rare is Grisham’s feat of keeping up the pace of producing, on average, a novel a year without a notable diminishment of ingenuity or literary quality.", author: "John Grisham", image_url: "https://images-na.ssl-images-amazon.com/images/I/51U2hIUQgqL._SY346_.jpg" },
@@ -42,11 +44,154 @@ exports.seed = function (knex, Promise) {
 			image_url: "https://images-na.ssl-images-amazon.com/images/I/41plY9%2B1OrL._SX342_.jpg",
 		},
 		{
-			title: "The Body: A Guide for Occupants",
-			description: "Bill Bryson once again proves himself to be an incomparable companion as he guides us through the human body--how it functions, its remarkable ability to heal itself, and (unfortunately) the ways it can fail.",
-			author: "Bill Bryson",
+			title: "The 5 Love Languages: The Secret to Love that Lasts",
+			description: "A book from one anthropologist's perspective on how to communicate better with loved ones.",
+			author: "Gary-Chapman",
 			image_url: "https://images-na.ssl-images-amazon.com/images/I/41aIidpbKwL._SX340_BO1,204,203,200_.jpg",
-		}
-
+		},
+		{
+			title: "The Unofficial Harry Potter Cookbook",
+			description: "With this cookbook, dining a la Hogwarts is as easy as Banoffi Pie. With more than 150 easy-to-make recipes, tips, and techniques, you can indulge in spellbindingly delicious meals drawn straight from the pages of your favorite Potter stories.",
+			author: "Dinah Bucholz",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/41aIidpbKwL._SX340_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "A Brief History of Time",
+			description: "A landmark volume in science writing by one of the great minds of our time, Stephen Hawking's book explores such profound questions as: How did the universe begin—and what made its start possible? Does time always flow forward? Is the universe unending—or are there boundaries? Are there other dimensions in space? What will happen when it all ends?",
+			author: "Stephen Hawking",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51%2BGySc8ExL._SX333_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Devil in the White City: Murder, Magic, and Madness at the Fair That Changed America",
+			description: "Bringing Chicago circa 1893 to vivid life, Erik Larson's spellbinding bestseller intertwines the true tale of two men--the brilliant architect behind the legendary 1893 World's Fair, striving to secure America's place in the world; and the cunning serial killer who used the fair to lure his victims to their death. Combining meticulous research with nail-biting storytelling, Erik Larson has crafted a narrative with all the wonder of newly discovered history and the thrills of the best fiction.",
+			author: "Erik Larson",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51cdhA7uj0L._SX314_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Diary of a Young Girl",
+			description: "The Diary of a Young Girl is the record of two years in the life of a remarkable Jewish girl whose triumphant humanity in the face of unfathomable deprivation and fear has made the book one of the most enduring documents of our time.",
+			author: "Anne Frank",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51EPqZ9kFnL._SX309_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Giver",
+			description: "When Jonas turns 12 he is singled out to receive special training from The Giver. The Giver alone holds the memories of the true pain and pleasure of life. Not until he is given his life assignment as the Receiver does Jonas begin to understand the dark secrets behind this fragile community. Now, it is time for Jonas to receive the truth. There is no turning back.",
+			author: "Lois Lowry",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51R8AA8QEVL._SX322_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Shining",
+			description: "Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he'll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote . . . and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old.",
+			author: "Stephen King",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51vRAjC5QvL._SX302_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "On the Road",
+			description: "Inspired by Jack Kerouac's adventures with Neal Cassady, On the Road tells the story of two friends whose cross-country road trips are a quest for meaning and true experience. Written with a mixture of sad-eyed naiveté and wild ambition and imbued with Kerouac's love of America, his compassion for humanity, and his sense of language as jazz,",
+			author: "Jack Kerouac",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51nr10ChxRL._SX324_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Gone Girl",
+			description: "On a warm summer morning in North Carthage, Missouri, it is Nick and Amy Dunne's fifth wedding anniversary. Presents are being wrapped and reservations are being made when Nick's clever and beautiful wife disappears. Husband-of-the-Year Nick isn't doing himself any favors with cringe-worthy daydreams about the slope and shape of his wife's head, but passages from Amy's diary reveal the alpha-girl perfectionist could have put anyone dangerously on edge. Under mounting pressure from the police and the media—as well as Amy's fiercely doting parents—the town golden boy parades an endless series of lies, deceits, and inappropriate behavior. Nick is oddly evasive, and he's definitely bitter—but is he really a killer? ",
+			author: "Gillian Flynn",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/416TH3igfOL._SX322_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Fahrenheit 451",
+			description: "Sixty years after its originally publication, Ray Bradbury's internationally acclaimed novel Fahrenheit 451 stands as a classic of world literature set in a bleak, dystopian future. Today its message has grown more relevant than ever before.",
+			author: "Ray Bradbury",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/41qI9quGIdL._SX324_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Catch-22:",
+			description: "Fifty years after its original publication, Catch-22 remains a cornerstone of American literature and one of the funniest—and most celebrated—books of all time. In recent years it has been named to best novels lists by Time, Newsweek, the Modern Library, and the London Observer.",
+			author: "Joseph Heller",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51ysenLIXNL._SX324_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Angela's Ashes: A Memoir",
+			description: "The Diary of a Young Girl is the record of two years in the life of a remarkable Jewish girl whose triumphant humanity in the face of unfathomable deprivation and fear has made the book one of the most enduring documents of our time.",
+			author: "Frank McCourt",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51N%2BcbQFmlL._SX327_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Things Fall Apart",
+			description: "With more than 20 million copies sold and translated into fifty-seven languages, Things Fall Apart provides one of the most illuminating and permanent monuments to African experience. Achebe does not only capture life in a pre-colonial African village, he conveys the tragedy of the loss of that world while broadening our understanding of our contemporary realities.",
+			author: "Chinua Achebe",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/61l%2BVmohEOL._SX322_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "If Animals Kissed Goodnight",
+			description: "A touching children's book about how each animal would kiss goodnight if they followed in the human tradition. Sure to put  your little one to sleep and spark their imagination.",
+			author: "Ann Whitford Paul",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51iHM-M%2BADL._SY498_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Home Work: A Memoir of My Hollywood Years",
+			description: "In this follow-up to her critically acclaimed memoir, Home, Julie Andrews shares reflections on her astonishing career, including such classics as Mary Poppins, The Sound of Music, and Victor/Victoria.",
+			author: "Julie Andrews",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/41rdtGJLZPL._SX326_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Wonky Donkey",
+			description: "Kids will love this cumulative and hysterical read-aloud! About a very Wonky Donkey!",
+			author: "Craig Smith",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51cHCkvvKiL._SY498_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Goodnight Moon",
+			description: "In a great green room, tucked away in bed, is a little bunny. Goodnight room, goodnight moon. And to all the familiar things in the softly lit room—to the picture of the three little bears sitting on chairs, to the clocks and his socks, to the mittens and the kittens, to everything one by one—the little bunny says goodnight.",
+			author: "Margaret Wise Brown",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51%2BmV1XUUQL._SY432_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma",
+			description: "Essential reading for anyone interested in understanding and treating traumatic stress and the scope of its impact on society.",
+			author: "Bessel van der Kolk M.D.",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/41jibh5KHbL._SX323_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Dinky Donkey ",
+			description: "Quite possibly the greatest book about a Dinky Donkey you will ever read!",
+			author: "Craig Smith",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51-ULJ60a0L._SY498_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "How to Talk to Your Cat About Gun Safety",
+			description: "Long gone are the good old days when a cat’s biggest worries were mean dogs or a bath. Modern cats must confront satanists, online predators, the possibility of needing to survive in a post-apocalyptic wasteland, and countless other threats to their nine lives.",
+			author: "Zachary Auburn",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51CWWAdCx8L._SX331_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Half Baked Harvest Super Simple",
+			description: "The 125-plus recipes are all complemented by Gerard’s impeccable photography and food styling. You’ll be hard-pressed to decide which one to make first.",
+			author: "Tieghan Gerard",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/517Wy8yXSOL._SX400_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "Twisted Twenty-Six",
+			description: "How far will Stephanie Plum go to protect the one person who means the most to her? The stakes have never been higher!",
+			author: "Janet Evanovich	",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/510bgMkPP1L._SX327_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Totally Awesome Book of Useless Information",
+			description: "Did you know that the Pilgrims ate popcorn at the first Thanksgiving? Or that Maine is the toothpick capital of the world, or that frogs have teeth?",
+			author: "Noel Botham",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/511z%2BWBjO8L._SX359_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "The Overstory: A Novel",
+			description: "The Overstory, winner of the 2019 Pulitzer Prize in Fiction, is a sweeping, impassioned work of activism and resistance that is also a stunning evocation of―and paean to―the natural world.",
+			author: "Richard Powers",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/51t47tHiewL._SX331_BO1,204,203,200_.jpg",
+		},
+		{
+			title: "From Crook to Cook: Platinum Recipes from Tha Boss Dogg's Kitchen",
+			description: "Looking for cookbooks with a little more personality? Welcome to tha Boss Dogg's Kitchen.",
+			author: "Snoop Dogg",
+			image_url: "https://images-na.ssl-images-amazon.com/images/I/5160yyObJrL._SX417_BO1,204,203,200_.jpg",
+		},
 	]);
 };
