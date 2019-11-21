@@ -21,8 +21,10 @@ function findById(id) {
 }
 
 function remove(id) {
-	return db('books')
-		.where("id", id)
-		.del();
+	return db('reviews').where('books_id', id).del().then(deleted => {
+		return db('books')
+			.where("id", id)
+			.del();
+	});
 }
 
