@@ -27,7 +27,7 @@ Bookr is your source for all things book review!  Bookr allows you to utilize th
 |:---------:|:-----------:|:--------------:|
 This endpoint allows user to get all book reviews related to a book by that book id and to post a review to a book already within the database.
 |GET	|/api/reviews/:id	|Returns all Book Reviews based on passed in Book ID|
-|POST|/api/reviews/:id		|Creates A New Book  Review using Book ID|
+|POST|/api/reviews/:id		|Creates A New Book Review using Book ID|
 
 ## Books
 |Request Type	|Endpoint	|Description|
@@ -101,14 +101,16 @@ This endpoint allows user to get all book reviews related to a book by that book
     "rating": 1,
     "review": "Worst book ever",
     "books_id": 1,
-    "user_id": 1
+    "user_id": 1,
+    "username": "Test1"
   },
   {
     "id": 4,
     "rating": 4,
     "review": "Not bad",
     "books_id": 1,
-    "user_id": 2
+    "user_id": 2,
+    "username": "Test2"
   }
 ]
 ```
